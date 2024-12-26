@@ -16,7 +16,7 @@ const users = document.querySelector<HTMLDivElement>('#user-list')
 
 const userList: Item[] = loadUsers()
 
-userList.forEach(addUser)
+// userList.forEach(addUser)
 
 form?.addEventListener('submit', e => {
     e.preventDefault()
