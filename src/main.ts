@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid'
-import '../style.css'
+import './index.css'
 
 type Item = {
     id: string,
@@ -14,6 +14,10 @@ const email = document.querySelector<HTMLInputElement>('#email')
 
 const users = document.querySelector<HTMLDivElement>('#user-list')
 
+const userList: Item[] = loadUsers()
+
+userList.forEach(addUser)
+
 form?.addEventListener('submit', e => {
     e.preventDefault()
 
@@ -24,7 +28,16 @@ form?.addEventListener('submit', e => {
         name:name.value,
         email:email.value,
     } 
+
+    userList.push(userItem)
+
     addUser(userItem)
+
+    saveUsers()
+
+    name.value = "";
+    email.value = "";
+
 })
 
 function addUser(item: Item){
@@ -40,4 +53,29 @@ function addUser(item: Item){
 
     users?.append(container)
 
+    container.classList.add(
+        'p-6',
+        'bg-slate-800',
+        'rounded-md',
+        'text-center',
+        'text-slate-200',
+    )
+
+}
+
+// Functiom for LocalStorage
+
+function saveUsers(){
+    localStorage.setItem('items', JSON.stringify(userList))
+}
+
+//Loading
+
+function loadUsers() :Item[] {
+
+    const data = localStorage.getItem('items')
+
+    if (data == null) return []
+
+    return JSON.parse(data)
 }
