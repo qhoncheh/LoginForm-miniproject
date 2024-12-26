@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/uuid": "^10.0.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
@@ -111,6 +112,7 @@
     "ts-interface-checker": "^0.1.13",
     "update-browserslist-db": "^1.1.1",
     "util-deprecate": "^1.0.2",
+    "uuid": "^11.0.3",
     "which": "^2.0.2",
     "wrap-ansi": "^8.1.0",
     "wrap-ansi-cjs": "^7.0.0",
