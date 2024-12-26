@@ -6,7 +6,13 @@
     <title>Ts Simple Project</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <form id="add-user-form" class="flex flex-col gap-5 max-w-xl p-6 my-10 mx-auto bg-slate-800 rounded-md">
+        <input type="text" placeholder="Name" id="name">
+        <input type="text" placeholder="Email" id="email">
+        <button>Add User</button>
+      </form>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
